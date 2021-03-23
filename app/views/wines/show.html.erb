@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @wine.kind %>
+</p>
+
+<p>
+  <strong>Strains:</strong>
+  <% if @wine.strains.present? %>
+    <ul>
+      <% @wine.strains.each do |strain| %>
+      <li><%= strain.name  %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
